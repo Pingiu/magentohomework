@@ -1,0 +1,14 @@
+{
+    "HomeworkDeclarativeSchema": {
+        "column": {
+            "entity_id": true,
+            "product_name": true,
+            "kol_product": true,
+            "date_sales": true,
+            "discount": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

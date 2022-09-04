@@ -1,0 +1,43 @@
+<?php
+/** @var \Perspective\HomeworkDeclarativeSchema\Block\Template $block */
+
+$viewModel = $block->getData('view_model');
+
+
+$bonus = $viewModel->getCollectionForBonus();
+$withoutbonus = $viewModel->getCollectionWithoutBonus();
+
+foreach($bonus as $item){
+    echo "<pre>";
+    echo "Номенклатурный номер: ".$item->getData('entity_id');
+    echo "<br>";
+    echo "Название проданного товара: ".$item->getData('product_name');
+    echo "<br>";
+    echo "Количество проданного товара: ".$item->getData('kol_product');
+    echo "<br>";
+    echo "Дата продажи: ".$item->getData('date_sales');
+    echo "<br>";
+    echo "Стоимость единицы товара: ".$item->getData('unit_cost')."$";
+    echo "<br>";     
+    echo "Бонус: ".$item->getData('bonus');
+    echo "</pre>";
+    echo "Стоимость продажи: ".$item->getData('unit_cost')*$item->getData('kol_product')*(1-$item->getData('bonus'));  
+}
+echo "<hr>";
+foreach($withoutbonus as $item){
+    echo "<pre>";
+    echo "Номенклатурный номер: ".$item->getData('entity_id');
+    echo "<br>";
+    echo "Название проданного товара: ".$item->getData('product_name');
+    echo "<br>";
+    echo "Количество проданного товара: ".$item->getData('kol_product');
+    echo "<br>";
+    echo "Дата продажи: ".$item->getData('date_sales');
+    echo "<br>";
+    echo "Стоимость единицы товара: ".$item->getData('unit_cost')."$";
+    echo "<br>";     
+    echo "Бонус: ".$item->getData('bonus');
+    echo "</pre>";
+    echo "Стоимость продажи: ".$item->getData('unit_cost')*$item->getData('kol_product');  
+}
+?>

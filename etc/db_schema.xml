@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+<table name="HomeworkDeclarativeSchema" resource="default" engine="innodb" comment="Customer Details">
+    <column xsi:type="smallint" name="entity_id" padding="6" unsigned="false" nullable="false" identity="true" comment="entityid"/>
+    <column xsi:type="varchar" name="product_name" nullable="false" length="25" comment="productname"/>
+    <column xsi:type="int" name="kol_product" nullable="false" unsigned="false" comment="kol_product"/>
+    <column xsi:type="float" name="unit_cost" nullable="false" unsigned="false"  comment="Unit cost"/>
+    <column xsi:type="float" name="bonus" nullable="false" comment="bonus" />
+    <column xsi:type="date" name="date_sales" nullable="false" comment="date sales"/>
+    <constraint xsi:type="primary" referenceId="PRIMARY">
+    <column name="entity_id"/>
+</constraint>
+</table>
+</schema>
